@@ -136,8 +136,8 @@ public final class ServiceDiscoveryManager extends Manager {
     private ServiceDiscoveryManager(XMPPConnection connection) {
         super(connection);
 
-        addFeature(DiscoverInfo.NAMESPACE);
-        addFeature(DiscoverItems.NAMESPACE);
+//        addFeature(DiscoverInfo.NAMESPACE);
+//        addFeature(DiscoverItems.NAMESPACE);
 
         // Listen for disco#items requests and answer with an empty result
         connection.registerIQRequestHandler(new AbstractIqRequestHandler(DiscoverItems.ELEMENT, DiscoverItems.NAMESPACE, IQ.Type.get, Mode.async) {
