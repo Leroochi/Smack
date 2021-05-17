@@ -405,24 +405,24 @@ task prepareReleasedocs(type: Copy) {
 	filter(ReplaceTokens, tokens: [version: version, releasedate: builtDate, targetCompatibility: targetCompatibility.toString()])
 }
 
-markdownToHtml {
-	sourceDir = new File(projectDir, "/documentation")
-	outputDir documentationDir
-	configuration = [tables: true, fencedCodeBlocks: true]
-}
+//markdownToHtml {
+//	sourceDir = new File(projectDir, "/documentation")
+//	outputDir documentationDir
+//	configuration = [tables: true, fencedCodeBlocks: true]
+//}
 
-task distributionZip(type: Zip, dependsOn: [javadocAll, prepareReleasedocs, markdownToHtml]) {
-	classifier builtDate
-	into ('javadoc') {
-		from(javadocAllDir)
-	}
-	into ('releasedocs') {
-		from(releasedocsDir)
-	}
-	into ('releasedocs/documentation') {
-		from(documentationDir)
-	}
-}
+//task distributionZip(type: Zip, dependsOn: [javadocAll, prepareReleasedocs, markdownToHtml]) {
+//	classifier builtDate
+//	into ('javadoc') {
+//		from(javadocAllDir)
+//	}
+//	into ('releasedocs') {
+//		from(releasedocsDir)
+//	}
+//	into ('releasedocs/documentation') {
+//		from(documentationDir)
+//	}
+//}
 
 task maybeCheckForSnapshotDependencies {
 	// Don't check for Snapshot dependencies if this is a snapshot.
