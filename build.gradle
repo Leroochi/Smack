@@ -5,7 +5,7 @@ buildscript {
         maven { url 'https://dl.bintray.com/content/aalmiray/kordamp' }
     }
     dependencies {
-        classpath 'org.kordamp.gradle:markdown-gradle-plugin:2.2.0'
+        classpath 'org.kordamp:markdown-gradle-plugin:1.0.0'
 		classpath 'org.kordamp.gradle:clirr-gradle-plugin:0.2.2'
     }
 }
@@ -147,7 +147,7 @@ allprojects {
 		// - https://issues.igniterealtime.org/browse/SMACK-858
 		jxmppVersion = '[1.0.0, 1.0.999]'
 		miniDnsVersion = '[1.0.0, 1.0.999]'
-		smackMinAndroidSdk = 19
+		smackMinAndroidSdk = 28
 		junitVersion = '5.7.1'
 		commonsIoVersion = '2.6'
 		bouncyCastleVersion = '1.68'
