@@ -6,7 +6,8 @@ Classes and methods that implement support for the various XMPP XEPs
 // Note that the test dependencies (junit, …) are inferred from the
 // sourceSet.test of the core subproject
 dependencies {
-	api project(':smack-core')
+	implementation 'junit:junit:4.12'
+    api project(':smack-core')
 	// Some implementations need APIs provided by smack-im,
 	// e.g. message delivery receipts the roster
 	api project(':smack-im')

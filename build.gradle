@@ -2,10 +2,10 @@ buildscript {
     repositories {
         jcenter()
 		maven { url 'https://plugins.gradle.org/m2/' }
-        maven { url 'https://dl.bintray.com/content/aalmiray/kordamp' }
+        maven { url 'http://dl.bintray.com/content/kordamp/kordamp' }
     }
     dependencies {
-        classpath 'org.kordamp:markdown-gradle-plugin:1.0.0'
+        classpath 'org.kordamp.gradle:markdown-gradle-plugin:2.2.0'
 		classpath 'org.kordamp.gradle:clirr-gradle-plugin:0.2.2'
     }
 }
@@ -16,6 +16,7 @@ plugins {
 	// Use e.g. "gradle <task> taskTree" to show its dependency tree.
 	id 'com.dorongold.task-tree' version '1.5'
 	id 'com.github.kt3k.coveralls' version '2.10.2'
+	id 'org.kordamp.gradle.markdown' version '2.2.0'
 }
 
 apply plugin: 'org.kordamp.gradle.markdown'
@@ -457,12 +458,12 @@ ${oneLineDesc}."""
 subprojects {
 	apply plugin: 'maven-publish'
 	apply plugin: 'signing'
-	apply plugin: 'checkstyle'
+//	apply plugin: 'checkstyle'
 	apply plugin: 'org.kordamp.gradle.clirr'
 
-	checkstyle {
-		toolVersion = '8.27'
-	}
+//	checkstyle {
+//		toolVersion = '8.27'
+//	}
 	task sourcesJar(type: Jar, dependsOn: classes) {
 		classifier = 'sources'
 		from sourceSets.main.allSource
@@ -627,9 +628,9 @@ subprojects*.jar {
 }
 
 configure(subprojects - gplLicensedProjects) {
-	checkstyle {
-		configProperties.checkstyleLicenseHeader = "header"
-	}
+//	checkstyle {
+//		configProperties.checkstyleLicenseHeader = "header"
+//	}
 	publishing {
 		publications {
 			mavenJava(MavenPublication) {
@@ -648,9 +649,9 @@ configure(subprojects - gplLicensedProjects) {
 }
 
 configure(gplLicensedProjects) {
-	checkstyle {
-		configProperties.checkstyleLicenseHeader = "${project.name}-gplv3-license-header"
-	}
+//	checkstyle {
+//		configProperties.checkstyleLicenseHeader = "${project.name}-gplv3-license-header"
+//	}
 	publishing {
 		publications {
 			mavenJava(MavenPublication) {

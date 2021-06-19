@@ -31,7 +31,7 @@ import org.jivesoftware.smack.xml.XmlPullParserException;
 /**
  * The parser for {@link StandardExtensionElement}s.
  *
- * @author Florian Schmaus
+ * @author Florian Schmaussssss
  *
  */
 public class StandardExtensionElementProvider extends ExtensionElementProvider<StandardExtensionElement> {

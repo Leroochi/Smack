@@ -21,14 +21,14 @@ import java.text.ParseException;
 
 import org.jivesoftware.smack.packet.IqData;
 import org.jivesoftware.smack.packet.XmlEnvironment;
-import org.jivesoftware.smack.provider.IqProvider;
+import org.jivesoftware.smack.provider.IqProviderOld;
 import org.jivesoftware.smack.xml.XmlPullParser;
 import org.jivesoftware.smack.xml.XmlPullParserException;
 
 import org.jivesoftware.smackx.time.packet.Time;
 import org.jivesoftware.smackx.time.packet.TimeBuilder;
 
-public class TimeProvider extends IqProvider<Time> {
+public class TimeProvider extends IqProviderOld<Time> {
 
     @Override
     public Time parse(XmlPullParser parser, int initialDepth, IqData iqData, XmlEnvironment xmlEnvironment)

@@ -53,7 +53,7 @@ import org.jivesoftware.smack.packet.XmlEnvironment;
 import org.jivesoftware.smack.parsing.SmackParsingException;
 import org.jivesoftware.smack.parsing.StandardExtensionElementProvider;
 import org.jivesoftware.smack.provider.ExtensionElementProvider;
-import org.jivesoftware.smack.provider.IqProvider;
+import org.jivesoftware.smack.provider.IqProviderOld;
 import org.jivesoftware.smack.provider.ProviderManager;
 import org.jivesoftware.smack.xml.SmackXmlParser;
 import org.jivesoftware.smack.xml.XmlPullParser;
@@ -545,7 +545,7 @@ public class PacketParserUtils {
                 // Otherwise, see if there is a registered provider for
                 // this element name and namespace.
                 default:
-                    IqProvider<IQ> provider = ProviderManager.getIQProvider(elementName, namespace);
+                    IqProviderOld<IQ> provider = ProviderManager.getIQProvider(elementName, namespace);
                     if (provider != null) {
                             iqPacket = provider.parse(parser, iqData, outerXmlEnvironment);
                     }

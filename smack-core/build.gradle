@@ -7,6 +7,7 @@ ext {
 
 dependencies {
 	api project(':smack-xmlparser')
+	api project(':smack-xmlparser-stax')
 	api "org.jxmpp:jxmpp-core:$jxmppVersion"
 	api "org.jxmpp:jxmpp-jid:$jxmppVersion"
 	api "org.minidns:minidns-core:$miniDnsVersion"
